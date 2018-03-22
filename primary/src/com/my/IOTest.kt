@@ -21,7 +21,7 @@ fun readFromNet() {
 
         //获取必应首页图片并保存
         //获取XML格式图片信息
-        val url:String = "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=10"
+        val url:String = "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=20"
         println(url)
         val bing = URL(url)
         val texts = bing.readText()
