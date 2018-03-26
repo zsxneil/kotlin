@@ -1,4 +1,4 @@
-package com.my.rest
+package com.my.form
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
