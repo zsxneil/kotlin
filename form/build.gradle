@@ -4,6 +4,8 @@ version '1.0-SNAPSHOT'
 buildscript {
     ext.kotlin_version = '1.2.10'
     ext.spring_boot_version = '1.5.4.RELEASE'
+    ext.springfox_swagger2_version = '2.7.0'
+    ext.mysql_version = '5.1.21'
 
     repositories {
         mavenCentral()
@@ -14,8 +16,10 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version"
+        //        Kotlin整合SpringBoot的默认无参构造函数，默认把所有的类设置open类插件
+        classpath("org.jetbrains.kotlin:kotlin-noarg:$kotlin_version")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:$kotlin_version")
     }
 }
 
@@ -40,6 +44,8 @@ dependencies {
     compile "org.hibernate:hibernate-validator"
     compile "org.apache.tomcat.embed:tomcat-embed-el"
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.5.4.RELEASE'
+    compile "org.springframework.boot:spring-boot-starter-jdbc:$spring_boot_version"
+    compile "mysql:mysql-connector-java:$mysql_version"
 
     testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_version"
     testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
